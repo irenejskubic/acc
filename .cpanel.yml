@@ -1,5 +1,5 @@
 deployment:
   tasks:
-    - export DEPLOYPATH="${HOME}/public_html/"
-    - /bin/cp -R .htaccess "${DEPLOYPATH}"
-    - /bin/cp -R index.html logos portfolio-images videos "${DEPLOYPATH}"
+    - export SRC_FILES="index.html logos portfolio-images videos .htaccess"
+    - export TARGETS="${HOME}/public_html ${HOME}/public_html/ycc.si ${HOME}/ycc.si"
+    - for T in ${TARGETS}; do if [ -d "${T}" ]; then /bin/cp -R ${SRC_FILES} "${T}/"; fi; done
