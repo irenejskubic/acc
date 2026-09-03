@@ -1,5 +1,5 @@
 deployment:
   tasks:
-    - export SRC_FILES="index.html logos portfolio-images videos .htaccess"
+    - export SRC_FILES="index.html styles.css script.js contact.php privacy.html 404.html logos portfolio-images videos .htaccess"
     - export TARGETS="${HOME}/public_html ${HOME}/public_html/ycc.si ${HOME}/ycc.si"
     - for T in ${TARGETS}; do if [ -d "${T}" ]; then /bin/cp -R ${SRC_FILES} "${T}/"; fi; done
